@@ -20,7 +20,6 @@ app.use(express.static("public"));
 
 mongoose.Promise = Promise;
 mongoose.connect("mongodb://localhost/week18Populater", {
-    // useMongoClient: true
 });
 
 app.get("/scrape", function(req, res) {
