@@ -23,10 +23,10 @@ mongoose.connect("mongodb://localhost/week18Populater", {
 });
 
 app.get("/scrape", function(req, res) {
-    axios.get("http://www.clickorlando.com/").then(function(response) {
+    axios.get("http://www.orlandosentinel.com/").then(function(response) {
         var $ = cheerio.load(response.data);
 
-        $("h3").each(function(i, element) {
+        $("h3.trb_outfit_relatedListTitle").each(function(i, element) {
             var result = {};
 
             result.title = $(this)
